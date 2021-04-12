@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>菜单栏字体对话框页面</title>
+  <link rel="stylesheet" href="jsnotepad.css">
+</head>
+<body>
+ 
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="./menubar.js"></script>
+<script src="./editor.js"></script>
+<script src="./dlgFont.js"></script>
+<script>
+$(function() {
+  /*编辑栏*/
+  var menuData =[
+    {title:'文件(F)',
+      menuItems:[
+        {title:'新建(N)',enabled:true,shortcut:'Ctrl+N'},
+        {title:'打开(O)...',enabled:true,shortcut:'Ctrl+O'},
+        {title:'保存(S)',enabled:true,shortcut:'Ctrl+S'},
+        {title:'另存为(A)...',enabled:true},
+        {title:'hr'},
+        {title:'页面设置(U)...',enabled:true},
+        {title:'打印(P)...',enabled:true,shortcut:'Ctrl+P'},
+        {title:'hr'},
+        {title:'退出(X)',enabled:true},
+      ]
+    },
+    {title:'编辑(E)', 
+      menuItems:[
+      {title:'撤销(U)',enabled:false,shortcut:'Ctrl+Z'},
+      {title:'hr'},
+      {title:'剪切(T)',enabled:false,shortcut:'Ctrl+X'},
+      {title:'复制(C)',enabled:false,shortcut:'Ctrl+C'},
+      {title:'粘贴(P)',enabled:true,shortcut:'Ctrl+V'},
+      {title:'删除(L)',enabled:false,shortcut:'Del'},
+      {title:'hr'},
+      {title:'查找(F)...',enabled:false,shortcut:'Ctrl+F'},
+      {title:'查找下一个(N)',enabled:false,shortcut:'F3'},
+      {title:'替换(R)',enabled:true,shortcut:'Ctrl+H'},
+      {title:'转到(G)...',enabled:false,shortcut:'Ctrl+G'},
+      {title:'hr'},
+      {title:'全选(A)',enabled:true,shortcut:'Ctrl+A'},
+      {title:'时间/日期(D)',enabled:true,shortcut:'F5'},
+    ]},
+  {title:'格式(O)', 
+    menuItems:[
+      {title:'自动换行(F)',enabled:true},
+      {title:'字体(F)...',enabled:true},
+    ]},
+  {title:'查看(V)', 
+    menuItems:[
+      {title:'状态栏(s)',enabled:true},
+    ]},
+  {title:'帮助(H)', 
+    menuItems:[
+      {title:'查看帮助(H)',enabled:true},
+      {title:'hr'},
+      {title:'关于记事本(A)',enabled:true},
+    ]},
+  ]
+  $menubar.show(menuData);
+  $menubar.enabled(4, 0, false);
+  $menubar.enabled(1, 0, true);
+  $editor.show();
+
+});
+</script>
+</body>
+</html>
