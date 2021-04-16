@@ -48,5 +48,11 @@ var $editor = (function() {
       });
     }
   }
-  return {show: show, resize: resize, change:change};
+
+  return {
+    show: show,
+    resize: resize, 
+    change:change
+  };
+
 }());

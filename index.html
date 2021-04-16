@@ -12,6 +12,7 @@
 <script src="./menubar.js"></script>
 <script src="./editor.js"></script>
 <script src="./dlgFont.js"></script>
+<script src="./statusbar.js"></script>
 <script>
 $(function() {
   /*编辑栏*/
@@ -66,6 +67,12 @@ $(function() {
   $menubar.enabled(4, 0, false);
   $menubar.enabled(1, 0, true);
   $editor.show();
+
+  /*状态栏*/
+  var bVisable = true;
+  $statusBar.init({row: 300, col: 100});
+  $statusBar.display(bVisable);
+  $statusBar.setRowCol(0, 0);
 
 });
 </script>
